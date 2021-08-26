@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeedBack</title>
+</head>
+
+<body>
+    <h4 id="hello">please give your feedback</h4>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora perferendis expedita velit dolorem provident
+        aut quos soluta nam perspiciatis, impedit deleniti, odit blanditiis sint qui reprehenderit laborum ipsum.
+        Doloribus, quos.</p>
+    <textarea name="" id="comment-box" cols="30" rows="10"></textarea>
+    <br>
+    <button id="posting-comment">Post</button>
+    <script>
+        // 1.event listener
+        document.getElementById('posting-comment').addEventListener('click', function () {
+            // 2.get user comment
+            const commentBox = document.getElementById('comment-box');
+            const userReview = commentBox.value;
+            console.log(userReview);
+            //3 create comment para
+            const newComment = document.createElement('p');
+            newComment.innerText = commentBox.value;
+
+            //4 append the comment 
+            const addComment = document.getElementById('hello');
+            addComment.appendChild(newComment);
+
+            //clean the comment box
+            commentBox.value = '';
+        })
+    </script>
+</body>
+
+</html>

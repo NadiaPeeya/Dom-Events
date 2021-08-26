@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>commentbox</title>
+</head>
+
+<body>
+    <article id="container">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa porro rerum, ex incidunt praesentium
+            assumenda harum obcaecati quas, inventore corrupti quidem vel saepe! Vitae quas consectetur, aspernatur
+            voluptatum deserunt esse?</p>
+    </article>
+    <div>
+        <textarea name="" id="comment-box" cols="60" rows="6"></textarea>
+    </div>
+    <button id="posting-comment">Post</button>
+    <script>
+        // document.getElementById('posting-comment').addEventListener('click', function () {
+        //     const myComment = document.getElementById('comment-box');
+        //     const myReview = myComment.value;
+
+        //     const hereComment = document.createElement('p');//creating an element 
+        //     hereComment.innerText = myReview;
+
+        //     const addComment = document.getElementById('container');
+        //     addComment.appendChild(hereComment);
+        //     myComment.value = '';
+        // })
+
+        document.getElementById('posting-comment').addEventListener('click', function () {
+            const commentBox = document.getElementById('comment-box');
+            const userReview = commentBox.value;
+            const newComment = document.createElement('p');
+            newComment.innerText = userReview;
+            const addComment = document.getElementById('container');
+            addComment.appendChild(newComment);
+            commentBox.value = '';
+
+        })
+
+    </script>
+</body>
+
+</html>
